@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark trading platform palette */
+    --background: 0.11 0.012 240;
+    --foreground: 0.92 0.01 240;
+    --card: 0.16 0.018 240;
+    --card-foreground: 0.92 0.01 240;
+    --popover: 0.18 0.018 240;
+    --popover-foreground: 0.92 0.01 240;
+    --primary: 0.74 0.15 168;
+    --primary-foreground: 0.12 0.015 240;
+    --secondary: 0.24 0.025 240;
+    --secondary-foreground: 0.92 0.01 240;
+    --muted: 0.19 0.02 240;
+    --muted-foreground: 0.53 0.025 240;
+    --accent: 0.74 0.15 168;
+    --accent-foreground: 0.12 0.015 240;
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.24 0.025 240;
+    --input: 0.19 0.02 240;
+    --ring: 0.74 0.15 168;
+    --gain: 0.83 0.18 152;
+    --loss: 0.65 0.22 25;
+    --table-bg: 0.12 0.015 240;
+    --header-bg: 0.14 0.016 240;
+    /* Charts */
+    --chart-1: 0.74 0.15 168;
+    --chart-2: 0.83 0.18 152;
+    --chart-3: 0.65 0.22 25;
+    --chart-4: 0.78 0.14 200;
+    --chart-5: 0.72 0.16 280;
+    --sidebar: 0.14 0.016 240;
+    --sidebar-foreground: 0.92 0.01 240;
+    --sidebar-primary: 0.74 0.15 168;
+    --sidebar-primary-foreground: 0.12 0.015 240;
+    --sidebar-accent: 0.24 0.025 240;
+    --sidebar-accent-foreground: 0.92 0.01 240;
+    --sidebar-border: 0.24 0.025 240;
+    --sidebar-ring: 0.74 0.15 168;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--card));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground));
+  }
+}
